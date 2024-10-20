@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://Abdullah:9818848066@cluster0.mdpwq.mongodb.net/CRUD_OperationsMongoDB")
+const DB_URL = process.env.DB_URL || "mongodb://localhost:27017/CRUD_OperationsMongoDB";
+mongoose.connect(DB_URL)
 
 const userSchema = new mongoose.Schema({
     name: String,
